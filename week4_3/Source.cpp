@@ -1,0 +1,65 @@
+#include<stdio.h>
+int main()
+{
+	int price, pay, return_money;
+	int _1000paper, _500paper, _100paper, _50paper, _20paper;
+	int _10coin, _5coin, _1coin;
+
+	printf("Product price : ");
+	scanf_s("%d",&price);
+	printf("You pay ");
+	scanf_s("%d",&pay);
+	return_money = pay - price;
+
+	if (return_money < 0)
+	{
+		printf("Your price %d baht\n",return_money);
+		printf("Please add %d baht",price-pay);
+	}
+	else
+	{
+		printf("Return money %d baht\n",return_money);
+		if (return_money == 0)
+			printf("No money return\n");
+		if (return_money >= 1000)
+		{
+			printf("_1000paper : %d\n",return_money/1000);
+			return_money = return_money % 1000;
+		}
+		if (return_money >= 500)
+		{
+			printf("_500paper : %d\n",return_money/500);
+			return_money = return_money % 500;
+		}
+		if (return_money >= 100)
+		{
+			printf("_100paper : %d\n",return_money/100);
+			return_money = return_money % 100;
+		}
+		if (return_money >= 50)
+		{
+			printf("_50paper : %d\n",return_money/50);
+			return_money = return_money % 50;
+		}
+		if (return_money >= 20)
+		{
+			printf("_20paper : %d\n",return_money/20);
+			return_money = return_money % 20;
+		}
+		if (return_money >= 10)
+		{
+			printf("_10coin : %d\n",return_money/10);
+			return_money = return_money % 10;
+		}
+		if (return_money >= 5)
+		{
+			printf("_5coin : %d\n", return_money / 5);
+			return_money = return_money % 5;
+		}
+		if (return_money >= 1)
+		{
+			printf("_1coin : %d\n", return_money);
+		}
+	}
+	return 0;
+}
